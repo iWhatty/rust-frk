@@ -1,0 +1,15 @@
+error[E0277]: the trait bound `TypeId: const PartialEq` is not satisfied
+  --> $DIR/const_cmp_type_id.rs:8:17
+   |
+LL |         assert!(TypeId::of::<u8>() == TypeId::of::<u8>());
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0277]: the trait bound `TypeId: const PartialEq` is not satisfied
+  --> $DIR/const_cmp_type_id.rs:10:17
+   |
+LL |         assert!(TypeId::of::<()>() != TypeId::of::<u8>());
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0277`.
